@@ -47,9 +47,9 @@ public class RainGame extends PApplet {
 
     int score = 0;
     int bucketWidth = 50;
-    int bucketHeight;
+    int bucketHeight = 50;
     PImage bucket;
-    int y;
+    int y = 0;
     int x = (int) random(WIDTH);
 
     // Sets the size of your canvas
@@ -61,16 +61,23 @@ public class RainGame extends PApplet {
     @Override
     public void setup() {
     	bucket = loadImage("bucket.png");
-    	bucket.resize(100, 100);
+    	bucket.resize(bucketWidth, bucketHeight);
     }
 
     @Override
-    public void draw() {
+    public void draw() {    	
     	background(255,255,255);
+    	text("Score: " + score, 25, 25);
+    	image(bucket, mouseX, 550);
     	fill(0,0,255);
     	stroke(0,0,255);
-    	ellipse(50, y, 30, 30);
-    	
+    	ellipse(x, y, 30, 30);
+    	y +=score+3;
+    	if(y >= 550) {  		
+    		checkCatch(x);
+    		x = (int)random(WIDTH);
+    		y = 0;
+    	}
     	}
 
 
