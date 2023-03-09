@@ -27,7 +27,7 @@ public class BodyPartQuiz {
 	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
-	JPanel panel = new JPanel();
+	JPanel panel = new JPanel(); 
 
 	public void run() {
 		initializeGui();
@@ -39,6 +39,7 @@ public class BodyPartQuiz {
 		imageIterator = imageList.iterator();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.add(panel);
+		window.setSize(500,500);
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
@@ -51,9 +52,9 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
 
