@@ -72,7 +72,7 @@ public class RainGame extends PApplet {
     	fill(0,0,255);
     	stroke(0,0,255);
     	ellipse(x, y, 30, 30);
-    	y +=score+3;
+    	y +=score+2;
     	if(y >= 550) {  		
     		checkCatch(x);
     		x = (int)random(WIDTH);
